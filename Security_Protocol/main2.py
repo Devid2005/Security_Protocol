@@ -3,7 +3,7 @@ import pickle
 
 import sys
 
-sys.path.insert(0, '/Users/devid/Documents/src7')
+sys.path.insert(0, '{path_file}')
 
 from faces1 import send2
 
@@ -11,7 +11,7 @@ a = send2()
 
 continue1 = False
 
-with open('/Users/devid/Documents/src7/cache/conf.conf', 'rb') as data:
+with open('{path_file}/cache/conf.conf', 'rb') as data:
     conf = pickle.load(data)
     conf = conf.decode('ascii')
     conf = int(conf)
@@ -37,8 +37,8 @@ while continue1:
     import numpy as np
     import getpass
 
-    sys.path.insert(1,'/Users/devid/Documents/src7/linked_list')
-    sys.path.insert(2,'/Users/devid/Documents/src7/gamal')
+    sys.path.insert(1,'{path_file}/linked_list')
+    sys.path.insert(2,'{path_file}/gamal')
 
     from c import linked
     from c import rotate_list_inv
@@ -58,10 +58,10 @@ while continue1:
     slec = input("Data to Unlock: ")
     pasw1 = input("Password to Unlock: ")
 
-    with open(f'/Users/devid/Documents/src7/cache/{slec}.data', 'rb') as data:
+    with open(f'{path_file}/cache/{slec}.data', 'rb') as data:
         matrix = pickle.load(data)
 
-    with open(f'/Users/devid/Documents/src7/cache/{slec}.node', 'rb') as node:
+    with open(f'{path_file}/cache/{slec}.node', 'rb') as node:
         linked = pickle.load(node)
 
     linked2 = rotate_list_inv(linked, conf)
